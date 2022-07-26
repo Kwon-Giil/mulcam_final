@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 업로드</title>
+</head>
+<body>
+    <br>
+    <h2> 플라스크 가상서버 연습용 </h2>
+    <br>
+
+    <form action="/" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/jpeg">
+        <button type="submit" value="submit">제출</button>
+    </form>
+    <br>
+    {% if f_name %}
+        <p>제출 성공</p>
+        <img src="{{url_for('static',filename=f_name)}}">
+    {% endif %}
+</body>
+</html>
